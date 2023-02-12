@@ -1,5 +1,5 @@
 // ==UserScript==
-// @name         Shortened Item Share Links
+// @name         shorten-shopping-urls
 // @namespace    https://github.com/katzerax/shorten-shopping-urls
 // @version      0.1
 // @description  copy shortened urls
