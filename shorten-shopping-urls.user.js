@@ -18,29 +18,29 @@ var button = document.createElement('button');
 button.textContent = 'Copy Shortened URL';
 
 if (currentURL.startsWith('https://www.ebay.com/itm/')){
-  // Insert the button to the right of an element with ID "gh-p-3"
+    // Insert the button to the right of an element with ID "gh-p-3"
     var ebayelement = document.querySelector('#gh-p-3');
     ebayelement.parentNode.insertBefore(button, ebayelement.nextSibling);
 
     button.addEventListener('click', function() {
-    // Remove everything after the "?" character
-    var newURL = currentURL.split('?')[0];
-    // Copy the new URL to the clipboard
-    navigator.clipboard.writeText(newURL);
-  });
+        // Remove everything after the "?" character
+        var newURL = currentURL.split('?')[0];
+        // Copy the new URL to the clipboard
+        navigator.clipboard.writeText(newURL);
+    });
 }
 
 else if (currentURL.includes('https://www.amazon.com/')){
     if (currentURL.indexOf('/dp/') !== -1 || currentURL.indexOf('/gp/product/') !== -1) {
-      // Insert the button to the right of an element with ID "prime-badge"
-      var amazonelement = document.querySelector("#availability > span");
-      amazonelement.parentNode.insertBefore(button, amazonelement.nextSibling);
+        // Insert the button to the right of an element with ID "prime-badge"
+        var amazonelement = document.querySelector("#availability > span");
+        amazonelement.parentNode.insertBefore(button, amazonelement.nextSibling);
 
-      button.addEventListener('click', function() {
-      // Remove everything after the "?" character
-      var newURL = currentURL.split('?')[0];
-      // Copy the new URL to the clipboard
-      navigator.clipboard.writeText(newURL);
-      });
-   }
+        button.addEventListener('click', function() {
+            // Remove everything after the "?" character
+            var newURL = currentURL.split('?')[0];
+            // Copy the new URL to the clipboard
+            navigator.clipboard.writeText(newURL);
+        });
+    }
 }
