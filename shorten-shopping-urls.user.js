@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         shorten-shopping-urls
 // @namespace    https://github.com/katzerax/shorten-shopping-urls
-// @version      0.1
+// @version      0.2
 // @description  copy shortened urls
 // @author       K
 // @match        https://www.ebay.com/*
