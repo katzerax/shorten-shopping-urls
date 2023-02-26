@@ -33,14 +33,15 @@ if (currentURL.startsWith('https://www.ebay.com/itm/')){
 else if (currentURL.includes('https://www.amazon.com/')){
     if (currentURL.indexOf('/dp/') !== -1 || currentURL.indexOf('/gp/product/') !== -1) {
         // Insert the button to the right of an element with ID "prime-badge"
-        var amazonelement = document.querySelector("#availability > span");
+        var amazonelement = document.querySelector("#nav-belt > div.nav-fill");
         amazonelement.parentNode.insertBefore(button, amazonelement.nextSibling);
 
         button.addEventListener('click', function() {
             // Remove everything after the "?" character
-            var newURL = currentURL.split('?')[0];
+            var newURL = currentURL.split('ref')[0];
+            var newnewURL = newURL.split('?')[0];
             // Copy the new URL to the clipboard
-            navigator.clipboard.writeText(newURL);
+            navigator.clipboard.writeText(newnewURL);
         });
     }
 }
