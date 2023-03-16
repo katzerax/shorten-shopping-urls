@@ -1,11 +1,12 @@
 // ==UserScript==
 // @name         shorten-shopping-urls
 // @namespace    https://github.com/katzerax/shorten-shopping-urls
-// @version      0.3
+// @version      0.4
 // @description  copy shortened urls
 // @author       K
 // @match        https://www.ebay.com/*
 // @match        https://www.amazon.com/*
+// @match        https://www.etsy.com/*
 // @icon         https://www.google.com/s2/favicons?sz=64&domain=ebay.com
 // @grant        none
 // ==/UserScript==
@@ -44,4 +45,16 @@ else if (currentURL.includes('https://www.amazon.com/')){
             navigator.clipboard.writeText(newnewURL);
         });
     }
+}
+
+else if (currentURL.includes('https://www.etsy.com/listing/')){
+    var etsyelement = document.querySelector("#gnav-header-inner > div.wt-width-full.wt-display-flex-xs.wt-pr-lg-3.wt-flex-lg-1.order-mobile-tablet-2");
+    etsyelement.parentNode.insertBefore(button, etsyelement.nextSibling);
+
+    button.addEventListener('click', function() {
+        // Remove everything after the "?" character
+        var newURL = currentURL.split('?')[0];
+        // Copy the new URL to the clipboard
+        navigator.clipboard.writeText(newURL);
+    });
 }
